@@ -34,6 +34,7 @@ export default {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  z-index: 2;
 }
 
 .search-box .search-bar {

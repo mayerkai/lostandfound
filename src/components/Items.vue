@@ -150,11 +150,11 @@ export default {
 .items_Wrapper {
   margin-top: 100px;
   height: auto;
+  z-index: 1;
 }
 
 .item_list {
   display: flex;
-
 }
 
 .item {
@@ -163,6 +163,11 @@ export default {
   margin: 30px;
   cursor: pointer;
   border-radius: 16px;
+
+  -webkit-transform: scale(1);
+  transform: scale(1);
+  -webkit-transition: 0.25s ease-in-out;
+  transition: 0.25s ease-in-out;
 
   background-color: grey;
 }
@@ -184,8 +189,13 @@ export default {
   width: 75%;
 }
 
+.item:hover {
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
 .item:hover .item_img img {
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.30), 0 15px 12px rgba(0, 0, 0, 0.20);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.30), 0 15px 12px rgba(0, 0, 0, 0.25);
 }
  
 </style>
