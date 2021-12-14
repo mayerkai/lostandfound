@@ -141,12 +141,12 @@
 export default {
   name: 'Items',
   components: {
-    
-  }
+
+  },
 }
 </script>
 
-<style>
+<style lang="scss">
 .items_Wrapper {
   margin-top: 100px;
   height: auto;
@@ -175,6 +175,7 @@ export default {
 .item h1 {
   font-size: 45px;
   margin: auto;
+  color: white  ;
 }
 
 .item_img {

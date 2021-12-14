@@ -1,4 +1,7 @@
 <template>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
 <nav class="navbar">
     <div class="search-box">
         <input type="text" class="search-bar" placeholder="Search..." />
@@ -10,8 +13,12 @@
         class="searchIcon"
         />
     </button>
-    <button class="lost">Lost</button>
-    <button class="found">Found</button>
+    <img src="../assets/logo_large.png" alt="logo" class="img_logo">
+    <!-- <button class="lost" @click="setValueFalse()">Lost</button>
+    <button class="found">Found</button> -->
+    <router-link to="/lost" class="lost">Lost</router-link>
+    <router-link to="/found" class="found">Found</router-link>
+    <router-link to="/" class="home">Home</router-link>
 </nav>
 </template>
 
@@ -20,14 +27,37 @@ export default {
   name: 'Navbar',
   components: {
     
-  }
+  },
 }
 </script>
 
-<style>
+<style lang="scss">
+$quiteBlack: #313131;
+$veryLightGray: rgba(255, 255, 255, 0.75);
+
+@mixin navbar_buttons {
+  width: 250px;
+  /* background-color: rgba(255, 255, 255, 0.75); */
+  border: none;
+  outline: none;
+  font-size: 30px;
+  font-weight: bold;
+  font-family: "Roboto", sans-serif;
+  text-align: center;
+  text-decoration: none;
+  color: white;
+  margin-top: 15px;
+  /* margin-left: auto; */
+}
+
+@mixin navbar_buttons_hover {
+  transition: 0.3s ease;
+  color: gray;
+}
+
 .navbar {
   width: 100%;
-  background-color: #313131;
+  background-color: $quiteBlack;
   margin: auto;
   position: fixed;
   top: 0;
@@ -40,8 +70,8 @@ export default {
 .search-box .search-bar {
   display: block;
   padding: 20px;
-  height: 31px;
-  color: #313131;
+  height: 33px;
+  color: $quiteBlack;
   font-size: 25px;
   -webkit-appearance: none;
      -moz-appearance: none;
@@ -49,29 +79,31 @@ export default {
   border: none;
   outline: none;
   background: none;
-  background-color: rgba(255, 255, 255, 0.75);
-}
-
-button {
-  width: 250px;
-  background-color: rgba(255, 255, 255, 0.75);
-  margin-left: 5px;
-  border: none;
-  outline: none;
-  font-size: 35px;
-  font-weight: bold;
-  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
- "Lucida Sans", Arial, sans-serif;
+  background-color: $veryLightGray;
 }
 
 .lost {
-  margin-left: auto;
+  @include navbar_buttons;
 }
 
-button:hover {
-  background-color: rgba(255, 255, 255, 0.65);
-  -webkit-transition: 0.3s ease;
-  transition: 0.3s ease;
+.lost:hover {
+  @include navbar_buttons_hover;
+}
+
+.found {
+  @include navbar_buttons;
+}
+
+.found:hover {
+  @include navbar_buttons_hover;
+}
+
+.home {
+  @include navbar_buttons;  
+}
+
+.home:hover {
+  @include navbar_buttons_hover;  
 }
 
 .searchIcon {
@@ -82,10 +114,25 @@ button:hover {
   margin: auto;
 }
 
-button.searchButton {
-  width: 100px;
+.searchButton {
+  width: 80px;
   margin: 0;
   padding: 0;
   display: center;
+  background-color: $veryLightGray;
+  border: none;
+}
+
+.searchButton:hover {
+  transition: 0.3s ease;
+  background-color: rgba(255, 255, 255, 0.6);  
+}
+
+.img_logo {
+  height: 50px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
 }
 </style>
