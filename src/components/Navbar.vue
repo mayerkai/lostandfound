@@ -14,8 +14,6 @@
         />
     </button>
     <img src="../assets/logo_large.png" alt="logo" class="img_logo">
-    <!-- <button class="lost" @click="setValueFalse()">Lost</button>
-    <button class="found">Found</button> -->
     <router-link to="/lost" class="lost">Lost</router-link>
     <router-link to="/found" class="found">Found</router-link>
     <router-link to="/" class="home">Home</router-link>

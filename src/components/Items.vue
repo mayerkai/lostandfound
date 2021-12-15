@@ -151,6 +151,7 @@ export default {
   margin-top: 100px;
   height: auto;
   z-index: 1;
+  padding-bottom: 100px;
 }
 
 .item_list {

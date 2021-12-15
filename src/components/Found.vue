@@ -1,6 +1,6 @@
 <template>
     <div>
-        <img src="../assets/Anton.jpg" alt="lol">
+        <img src="../assets/Anton.jpg" alt="lol" class="imgAnton">
     </div>
 </template>
 
@@ -11,5 +11,7 @@
 </script>
 
 <style lang="scss">
-
+    .imgAnton {
+        margin-top: 300px;   
+    }
 </style>
