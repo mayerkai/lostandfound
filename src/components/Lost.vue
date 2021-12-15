@@ -119,4 +119,38 @@ option {
 .select_location:after {
     @include select_style_after;
 }
+
+.select_search {
+    margin-left: 20px;
+    align-items: center;
+    background-color: #fff;
+    border: 2px solid #000;
+    border-radius: 6px;
+    box-sizing: border-box;
+    color: #000;
+    cursor: pointer;
+    display: inline-flex;
+    fill: #313131;
+    font-family: "Inter",sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    height: 41px;
+    letter-spacing: 3px;
+    line-height: 24px;
+    min-width: 140px;
+    outline: 0;
+    padding: 0 17px;
+    text-decoration: none;
+    transition: all .3s;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    box-shadow: 2px 2px 5px 1px rgba(0,0,0,0.3);
+}
+
+.select_search:hover {
+    border-color: #616161;
+    color: #616161;
+    fill: #616161;
+}
 </style>
