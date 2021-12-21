@@ -3,23 +3,20 @@
       <div class="footer__links">
         <div class="footer__link--wrapper">
           <div class="footer__link--items">
-            <h2>Tools Used</h2>
-            <a href="https://unity.com/de">Unity</a>
-            <a href="https://visualstudio.microsoft.com/de/">Visual Studio</a>
-            <a href="https://www.aseprite.org/">Aseprite</a>
+            <h2>Legal</h2>
+            <a href="#">Terms and Conditions</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of use</a>
           </div>
           <div class="footer__link--items">
-            <h2>Project Manager</h2>
+            <h2>Project Members</h2>
             <a href="https://www.instagram.com/jaythekk/">Yannik Fischer</a>
+            <a href="https://www.instagram.com/jaythekk/">Kristijan Mladenovic</a>
+            <a href="https://www.instagram.com/jaythekk/">Kai Mayer</a>
+            <a href="https://www.instagram.com/jaythekk/">Fabian Türtscher</a>
           </div>
         </div>
         <div class="footer__link--wrapper">
-          <div class="footer__link--items">
-            <h2>Project Employee</h2>
-            <a href="https://www.instagram.com/dontcallmekrisi/"
-              >Kristijan Mladenovic</a
-            >
-          </div>
           <div class="footer__link--items">
             <h2>Social Media</h2>
             <a href="https://www.instagram.com/bellapoarch/">Instagram</a>
@@ -82,10 +79,10 @@ export default {
     flex-direction: column;
     align-items: flex-start;
     margin-top: 16px;
-    margin-left: 16px;
+    margin-left: 60px;
     margin-bottom: 16px;
     text-align: left;
-    width: 160px;
+    width: 200px;
     box-sizing: border-box;
     }
 

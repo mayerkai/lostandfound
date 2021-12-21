@@ -152,6 +152,7 @@ export default {
   height: auto;
   z-index: 1;
   padding-bottom: 100px;
+  font-family: 'Roboto', sans-serif;
 }
 
 .item_list {

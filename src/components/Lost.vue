@@ -1,36 +1,60 @@
 <template>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
 
-    <div class="lost_wrapper">
-        <div class="select_category">
-            <select>
-                <option>Phones</option>
-                <option>Headphones</option>
-                <option>Other Electronics</option>
-                <option>Clothes</option>
-                <option>Others</option>
-            </select>
+    <!-- <div class="headlines_wrapper">
+        <div class="headline">
+            <h1>Category</h1>
         </div>
-        <div class="select_color">
-            <select>
-                <option>Black</option>
-                <option>White</option>
-                <option>Red</option>
-                <option>Blue</option>
-                <option>Other Colors</option>
-            </select>
+        <div class="headlineTwo">
+            <h1>Color</h1>
         </div>
-        <div class="select_location">
-            <select>
-                <option>Turnsaal</option>
-                <option>Klassen Erdgeschoss</option>
-                <option>Klassen 1. Stock</option>
-                <option>Klassen 2. Stock</option>
-                <option>Weiß ich nicht mehr...</option>
-            </select>
+        <div class="headlineThree">
+            <h1>Location</h1>
         </div>
-        <button class="select_search">Search</button>
-    </div>
+    </div> -->
+    <table>
+        <tr>
+            <th>Category</th>
+            <th>Color</th>
+            <th>Location</th>
+        </tr>
+        <tr>
+            <td>
+                <div class="select_category">
+                    <select>
+                        <option>Phones</option>
+                        <option>Headphones</option>
+                        <option>Other Electronics</option>
+                        <option>Clothes</option>
+                        <option>Others</option>
+                    </select>
+                </div>
+            </td>
+            <td>
+                <div class="select_color">
+                    <select>
+                        <option>Black</option>
+                        <option>White</option>
+                        <option>Red</option>
+                        <option>Blue</option>
+                        <option>Other Colors</option>
+                    </select>
+                </div>
+            </td>
+            <td>
+                <div class="select_location">
+                    <select>
+                        <option>Turnsaal</option>
+                        <option>Klassen Erdgeschoss</option>
+                        <option>Klassen 1. Stock</option>
+                        <option>Klassen 2. Stock</option>
+                        <option>Weiß ich nicht mehr...</option>
+                    </select>
+                </div>
+            </td>
+            <button class="select_search">Search</button>
+        </tr>
+    </table>
 </template>
 
 <script>
@@ -40,11 +64,32 @@
 </script>
 
 <style lang="scss">
+.headlines_wrapper {
+    display: flex;
+}
+
 .lost_wrapper {
   margin-top: 150px;
   display: flex;
   margin-left: 30px;
   padding-bottom: 700px;
+  font-family: 'Roboto', sans-serif;
+}
+
+table {
+    margin-top: 100px;
+}
+
+.headline {
+    margin-left: 45px;
+}
+
+.headlineTwo {
+    margin-left: 110px;
+}
+
+.headlineThree {
+    margin-left: 115px;
 }
 
 @mixin select_style {
@@ -71,6 +116,12 @@
     
     position: absolute;
     pointer-events: none;
+}
+
+h1 {
+    margin-top: 100px;
+    margin-left: 30px;
+    font-family: 'Roboto', sans-serif;
 }
 
 .select_category {
