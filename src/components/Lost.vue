@@ -43,49 +43,9 @@
             </div>
         </div>
     </div>
-    <!-- <table>
-        <tr>
-            <th>Category</th>
-            <th>Color</th>
-            <th>Location</th>
-        </tr>
-        <tr>
-            <td>
-                <div class="select_category">
-                    <select>
-                        <option>Phones</option>
-                        <option>Headphones</option>
-                        <option>Other Electronics</option>
-                        <option>Clothes</option>
-                        <option>Others</option>
-                    </select>
-                </div>
-            </td>
-            <td>
-                <div class="select_color">
-                    <select>
-                        <option>Black</option>
-                        <option>White</option>
-                        <option>Red</option>
-                        <option>Blue</option>
-                        <option>Other Colors</option>
-                    </select>
-                </div>
-            </td>
-            <td>
-                <div class="select_location">
-                    <select>
-                        <option>Turnsaal</option>
-                        <option>Klassen Erdgeschoss</option>
-                        <option>Klassen 1. Stock</option>
-                        <option>Klassen 2. Stock</option>
-                        <option>Weiß ich nicht mehr...</option>
-                    </select>
-                </div>
-            </td>
-            <button class="select_search">Search</button>
-        </tr>
-    </table> -->
+    <div class="container">
+        <button id="button" class="submit"></button>
+    </div>
 </template>
 
 <script>
@@ -95,26 +55,30 @@
 </script>
 
 <style lang="scss">
+* {
+    font-family: 'Roboto', sans-serif;
+}
+
 @mixin label {
-    font-size: 30px;
-    font-weight: 500;
-    margin: 5px 0;
+    font-size: 40px;
 }
 
 .selection {
-    padding-top: 200px;
+    padding-top: 100px;
+    padding-bottom: auto;
 }
 
 .select {
     position: relative;
     margin-left: 30px;
-    margin-bottom: 40px;
+    margin-bottom: 60px;
 }
 
 .select_title {
     display: block;
     width: 300px;
     height: 50px;
+    margin-top: 20px;
     padding: 3px 12px;
     font-size: 20px;
     line-height: 1.5;
@@ -123,6 +87,7 @@
     background-image: none;
     border: 1px solid #b0afaf;
     border-radius: 0;
+    font-weight: bold;
     -webkit-box-shadow: none;
     box-shadow: none;
     -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
@@ -146,48 +111,8 @@
     @include label;
 }
 
-@mixin select_style {
-    width: 300px;
-    margin-right: 20px;
-    cursor: pointer;
-    position: relative;
-}
-
-@mixin select_style_after {
-    content: '<>';
-    font: 20px "Consolas", monospace;
-    color: #333;
-    -webkit-transform: rotate(90deg);
-    -moz-transform: rotate(90deg);
-    -ms-transform: rotate(90deg);
-    transform: rotate(90deg);
-    right: 12px;
-
-    /*left line */
-    top: 14px;
-    padding: 0px 10px 10px;
-    border-bottom: 1px solid #999;
-    
-    position: absolute;
-    pointer-events: none;
-}
-
-h1 {
-    margin-top: 100px;
-    margin-left: 30px;
-    font-family: 'Roboto', sans-serif;
-}
-
-.select_category {
-    @include select_style;
-}
-
-.select_color {
-    @include select_style;
-}
-
-.select_location {
-    @include select_style;
+.select_div {
+    margin-top: 20px;
 }
 
 select {
@@ -212,51 +137,81 @@ select {
 
 option {
     cursor: pointer;
+    font-weight: bold;
 }
 
-.select_category:after {
-    @include select_style_after;
+
+
+$primaryColor: #999;
+$gray: #bbbbbb;
+
+.container {
+  margin-left: 30px;
+  margin-top: 80px;
+  margin-bottom: 80px;
 }
 
-.select_color:after {
-    @include select_style_after;
+.submit {
+  outline:none;
+  height: 40px;
+  text-align: center;
+  width: 130px;
+  border-radius:40px;
+  background: #fff;
+  border: 2px solid $primaryColor;
+  color:$primaryColor;
+  letter-spacing:2px;
+  font-weight: bold;
+  text-shadow:0;
+
+  cursor: pointer;
+  transition: all 0.25s ease;
+  &:hover {
+    color:white;
+    background: $primaryColor;
+  }
+  &:active {
+    //letter-spacing: 2px;
+    letter-spacing: 2px ;
+  }
+  &:after {
+    content:"SUBMIT";
+  }
 }
 
-.select_location:after {
-    @include select_style_after;
+.onclic {
+  width: 40px;
+  border-color:$gray;
+  border-width:3px;
+  font-size:0;
+  border-left-color:$primaryColor;
+  animation: rotating 2s 0.25s linear infinite;
+
+  &:after {
+    content:"";
+  }
+  &:hover {
+    color:$primaryColor;
+    background: white;
+  }
 }
 
-.select_search {
-    margin-left: 20px;
-    align-items: center;
-    background-color: #fff;
-    border: 2px solid #000;
-    border-radius: 6px;
-    box-sizing: border-box;
-    color: #000;
-    cursor: pointer;
-    display: inline-flex;
-    fill: #313131;
-    font-family: "Inter",sans-serif;
-    font-size: 16px;
-    font-weight: 600;
-    height: 41px;
-    letter-spacing: 3px;
-    line-height: 24px;
-    min-width: 140px;
-    outline: 0;
-    padding: 0 17px;
-    text-decoration: none;
-    transition: all .3s;
-    user-select: none;
-    -webkit-user-select: none;
-    touch-action: manipulation;
-    box-shadow: 2px 2px 5px 1px rgba(0,0,0,0.3);
+.validate {
+  font-size:13px;
+  color: white;
+  background: $primaryColor;
+  &:after {
+    font-family:'Roboto';
+    content:"\f00c";
+  }
 }
 
-.select_search:hover {
-    border-color: #616161;
-    color: #616161;
-    fill: #616161;
+@keyframes rotating {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 </style>
