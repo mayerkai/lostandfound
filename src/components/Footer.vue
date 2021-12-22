@@ -20,9 +20,7 @@
           <div class="footer__link--items">
             <h2>Social Media</h2>
             <a href="https://www.instagram.com/bellapoarch/">Instagram</a>
-            <a href="https://www.youtube.com/user/PewDiePie">Youtube</a>
             <a href="https://twitter.com/bunnydelphine">Twitter</a>
-            <a href="https://github.com/AthenicAustria/athenic-ui">athenic</a>
           </div>
         </div>
       </div>

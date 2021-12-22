@@ -1,18 +1,49 @@
 <template>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
 
-    <!-- <div class="headlines_wrapper">
-        <div class="headline">
-            <h1>Category</h1>
+    <div class="selection">
+        <div class="select">
+            <label for="title_id" class="label_title">Title</label>
+            <input id="select_title_id" class="select_title" name="title_id" placeholder="Item Title" type="text">
         </div>
-        <div class="headlineTwo">
-            <h1>Color</h1>
+        <div class="select">
+            <label for="category_id" class="label_category">Category</label>
+            <div class="select_div">
+                <select>
+                    <option>Phone</option>
+                    <option>Headphones</option>
+                    <option>Other Electronics</option>
+                    <option>Clothes</option>
+                    <option>Others</option>
+                </select>
+            </div>
         </div>
-        <div class="headlineThree">
-            <h1>Location</h1>
+        <div class="select">
+            <label for="color_id" class="label_color">Color</label>
+            <div class="select_div">
+                <select>
+                    <option>Black</option>
+                    <option>White</option>
+                    <option>Blue</option>
+                    <option>Red</option>
+                    <option>Others</option>
+                </select>
+            </div>
         </div>
-    </div> -->
-    <table>
+        <div class="select">
+            <label for="location_id" class="label_location">Location</label>
+            <div class="select_div">
+                <select>
+                    <option>Turnsaal</option>
+                    <option>Klassen Erdgeschoss</option>
+                    <option>Klassen 1. Stock</option>
+                    <option>Klassen 2. Stock</option>
+                    <option>Weiß ich nicht mehr...</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <!-- <table>
         <tr>
             <th>Category</th>
             <th>Color</th>
@@ -54,7 +85,7 @@
             </td>
             <button class="select_search">Search</button>
         </tr>
-    </table>
+    </table> -->
 </template>
 
 <script>
@@ -64,36 +95,59 @@
 </script>
 
 <style lang="scss">
-.headlines_wrapper {
-    display: flex;
+@mixin label {
+    font-size: 30px;
+    font-weight: 500;
+    margin: 5px 0;
 }
 
-.lost_wrapper {
-  margin-top: 150px;
-  display: flex;
-  margin-left: 30px;
-  padding-bottom: 700px;
-  font-family: 'Roboto', sans-serif;
+.selection {
+    padding-top: 200px;
 }
 
-table {
-    margin-top: 100px;
+.select {
+    position: relative;
+    margin-left: 30px;
+    margin-bottom: 40px;
 }
 
-.headline {
-    margin-left: 45px;
+.select_title {
+    display: block;
+    width: 300px;
+    height: 50px;
+    padding: 3px 12px;
+    font-size: 20px;
+    line-height: 1.5;
+    color: #282828;
+    background-color: #f0eeee;
+    background-image: none;
+    border: 1px solid #b0afaf;
+    border-radius: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
 }
 
-.headlineTwo {
-    margin-left: 110px;
+.label_title {
+    @include label;
 }
 
-.headlineThree {
-    margin-left: 115px;
+.label_category {
+    @include label;
+}
+
+.label_color {
+    @include label;
+}
+
+.label_location {
+    @include label;
 }
 
 @mixin select_style {
-    width: 220px;
+    width: 300px;
     margin-right: 20px;
     cursor: pointer;
     position: relative;
@@ -107,11 +161,11 @@ table {
     -moz-transform: rotate(90deg);
     -ms-transform: rotate(90deg);
     transform: rotate(90deg);
-    right: 11px;
+    right: 12px;
 
     /*left line */
-    top: 7px;
-    padding: 0 0 2px;
+    top: 14px;
+    padding: 0px 10px 10px;
     border-bottom: 1px solid #999;
     
     position: absolute;
@@ -141,8 +195,8 @@ select {
     -webkit-appearance: none;
     appearance: none;
     border: none;
-    width: 100%;
-    height: 40px;
+    width: 300px;
+    height: 60px;
     -moz-padding-start: calc(10px - 3px);
     padding-left: 10px;
     color: #313131;
@@ -153,6 +207,7 @@ select {
     border-radius: 3px;
     outline: none;
     cursor: pointer;
+    margin-left: 0px;
 }
 
 option {

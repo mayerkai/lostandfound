@@ -14,9 +14,9 @@
         />
     </button>
     <img src="../assets/logo_large.png" alt="logo" class="img_logo">
+    <router-link to="/" class="home">Home</router-link>
     <router-link to="/lost" class="lost">Lost</router-link>
     <router-link to="/found" class="found">Found</router-link>
-    <router-link to="/" class="home">Home</router-link>
 </nav>
 </template>
 
